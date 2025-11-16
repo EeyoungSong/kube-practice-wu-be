@@ -1,0 +1,1420 @@
+ERROR 2025-10-02 14:10:14,013 log 93368 6205714432 Internal Server Error: /api/v1/wordbooks/1/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2128, in get_prep_value
+    return int(value)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/contrib/auth/models.py", line 549, in __int__
+    raise TypeError(
+TypeError: Cannot cast AnonymousUser to int. Are you trying to use it in place of User?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/ocr_app/views/management_views/wordbook_views.py", line 210, in get
+    wordbook = get_object_or_404(Wordbook, user=request.user, id=wordbook_id)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 619, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1493, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1511, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1518, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1646, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1588, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1415, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/lookups.py", line 38, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/fields/related_lookups.py", line 112, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2130, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <django.contrib.auth.models.AnonymousUser object at 0x109e7a8c0>.
+ERROR 2025-10-03 06:59:00,946 log 62234 6123712512 Internal Server Error: /api/v1/wordbooks/save/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/wordbook_views.py", line 144, in post
+    user=user, name=data['wordbook_category'], language=data['wordbook_language']
+KeyError: 'wordbook_category'
+ERROR 2025-10-03 06:59:02,302 log 62234 6123712512 Internal Server Error: /api/v1/wordbooks/save/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/wordbook_views.py", line 144, in post
+    user=user, name=data['wordbook_category'], language=data['wordbook_language']
+KeyError: 'wordbook_category'
+ERROR 2025-10-03 07:14:15,180 log 68879 6241202176 Internal Server Error: /api/v1/extract/ocr/sentence/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/pytesseract/pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/subprocess.py", line 1863, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/usr/bin/tesseract'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_core/views.py", line 77, in post
+    sentences = extract_sentences_from_image(image)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_core/services.py", line 25, in extract_sentences_from_image
+    text = pytesseract.image_to_string(image, lang='kor+eng+chi_sim+chi_tra')
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/pytesseract/pytesseract.py", line 486, in image_to_string
+    return {
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/pytesseract/pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/pytesseract/pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/pytesseract/pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: /usr/bin/tesseract is not installed or it's not in your PATH. See README file for more information.
+ERROR 2025-10-03 12:17:37,718 log 50376 6170849280 Internal Server Error: /api/v1/wordbooks/47/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column ocr_app_sentenceword.part_of_speech does not exist
+LINE 1: ...."sentence_id", "ocr_app_sentenceword"."meaning", "ocr_app_s...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/wordbook_views.py", line 213, in get
+    return Response(serializer.data)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 573, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 384, in __iter__
+    self._fetch_all()
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column ocr_app_sentenceword.part_of_speech does not exist
+LINE 1: ...."sentence_id", "ocr_app_sentenceword"."meaning", "ocr_app_s...
+                                                             ^
+
+ERROR 2025-10-03 12:32:20,991 log 53218 6202306560 Internal Server Error: /api/v1/wordbooks/47/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column ocr_app_sentenceword.part_of_speech does not exist
+LINE 1: ...."sentence_id", "ocr_app_sentenceword"."meaning", "ocr_app_s...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/wordbook_views.py", line 215, in get
+    return Response(serializer.data)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 573, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 384, in __iter__
+    self._fetch_all()
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column ocr_app_sentenceword.part_of_speech does not exist
+LINE 1: ...."sentence_id", "ocr_app_sentenceword"."meaning", "ocr_app_s...
+                                                             ^
+
+ERROR 2025-10-03 12:32:24,803 log 53218 6219132928 Internal Server Error: /api/v1/wordbooks/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column ocr_app_sentenceword.part_of_speech does not exist
+LINE 1: ...."sentence_id", "ocr_app_sentenceword"."meaning", "ocr_app_s...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/wordbook_views.py", line 108, in get
+    'wordbooks': serializer.data,
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 384, in __iter__
+    self._fetch_all()
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column ocr_app_sentenceword.part_of_speech does not exist
+LINE 1: ...."sentence_id", "ocr_app_sentenceword"."meaning", "ocr_app_s...
+                                                             ^
+
+ERROR 2025-10-03 12:32:25,833 log 53218 6219132928 Internal Server Error: /api/v1/wordbooks/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column ocr_app_sentenceword.part_of_speech does not exist
+LINE 1: ...."sentence_id", "ocr_app_sentenceword"."meaning", "ocr_app_s...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/wordbook_views.py", line 108, in get
+    'wordbooks': serializer.data,
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 384, in __iter__
+    self._fetch_all()
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column ocr_app_sentenceword.part_of_speech does not exist
+LINE 1: ...."sentence_id", "ocr_app_sentenceword"."meaning", "ocr_app_s...
+                                                             ^
+
+ERROR 2025-10-03 12:32:27,873 log 53218 6219132928 Internal Server Error: /api/v1/wordbooks/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column ocr_app_sentenceword.part_of_speech does not exist
+LINE 1: ...."sentence_id", "ocr_app_sentenceword"."meaning", "ocr_app_s...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/wordbook_views.py", line 108, in get
+    'wordbooks': serializer.data,
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 384, in __iter__
+    self._fetch_all()
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column ocr_app_sentenceword.part_of_speech does not exist
+LINE 1: ...."sentence_id", "ocr_app_sentenceword"."meaning", "ocr_app_s...
+                                                             ^
+
+ERROR 2025-10-03 15:43:47,816 log 78018 6198849536 Internal Server Error: /api/v1/wordbooks/52/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/wordbook_views.py", line 215, in get
+    return Response(serializer.data)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 573, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/serializers/wordbook_serializers.py", line 83, in get_words_with_sentences
+    return serializer.data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    for field in fields:
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `pos` is not valid for model `Word` in `lingua_management.serializers.wordbook_serializers.WordWithSentencesSerializer`.
+ERROR 2025-10-03 15:43:48,846 log 78018 6198849536 Internal Server Error: /api/v1/wordbooks/52/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/wordbook_views.py", line 215, in get
+    return Response(serializer.data)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 573, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/serializers/wordbook_serializers.py", line 83, in get_words_with_sentences
+    return serializer.data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    for field in fields:
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `pos` is not valid for model `Word` in `lingua_management.serializers.wordbook_serializers.WordWithSentencesSerializer`.
+ERROR 2025-10-03 15:43:49,837 log 78018 6198849536 Internal Server Error: /api/v1/wordbooks/52/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/wordbook_views.py", line 215, in get
+    return Response(serializer.data)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 573, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/serializers/wordbook_serializers.py", line 83, in get_words_with_sentences
+    return serializer.data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    for field in fields:
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `pos` is not valid for model `Word` in `lingua_management.serializers.wordbook_serializers.WordWithSentencesSerializer`.
+ERROR 2025-10-03 15:43:50,886 log 78018 6198849536 Internal Server Error: /api/v1/wordbooks/52/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/wordbook_views.py", line 215, in get
+    return Response(serializer.data)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 573, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/serializers/wordbook_serializers.py", line 83, in get_words_with_sentences
+    return serializer.data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    for field in fields:
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `pos` is not valid for model `Word` in `lingua_management.serializers.wordbook_serializers.WordWithSentencesSerializer`.
+ERROR 2025-10-03 15:43:52,925 log 78018 6198849536 Internal Server Error: /api/v1/wordbooks/52/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/wordbook_views.py", line 215, in get
+    return Response(serializer.data)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 573, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 540, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/fields.py", line 1870, in to_representation
+    return method(value)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/serializers/wordbook_serializers.py", line 83, in get_words_with_sentences
+    return serializer.data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 797, in data
+    ret = super().data
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 715, in to_representation
+    return [
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 525, in to_representation
+    for field in fields:
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `pos` is not valid for model `Word` in `lingua_management.serializers.wordbook_serializers.WordWithSentencesSerializer`.
+ERROR 2025-10-05 06:55:46,671 log 80025 6147731456 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 06:55:46,671 log 80025 6248689664 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 06:55:46,671 log 80025 6215036928 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 06:55:46,671 log 80025 6231863296 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 06:58:29,704 log 80025 6164557824 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 06:58:29,704 log 80025 6147731456 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 06:58:29,704 log 80025 6181384192 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 06:58:29,707 log 80025 6130905088 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 06:59:40,350 log 80025 6147731456 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 06:59:40,351 log 80025 6130905088 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 06:59:40,352 log 80025 6164557824 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 06:59:40,352 log 80025 6181384192 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 07:00:30,511 log 80025 6130905088 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 07:00:30,511 log 80025 6164557824 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 07:00:30,511 log 80025 6147731456 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 07:00:30,512 log 80025 6181957632 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 07:01:26,510 log 80025 6181957632 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 07:01:26,510 log 80025 6147158016 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 07:01:26,510 log 80025 6130331648 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 07:01:26,511 log 80025 6163984384 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 07:01:49,372 log 80025 6147158016 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 07:01:49,372 log 80025 6163984384 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 07:01:49,372 log 80025 6130331648 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 07:01:49,373 log 80025 6181957632 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 133, in get_wordbook_review_words
+    'others': sentence_word.others if sentence_word.others else '',
+AttributeError: 'SentenceWord' object has no attribute 'others'
+ERROR 2025-10-05 08:10:50,738 log 8836 6160314368 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 93, in get_wordbook_review_words
+    category_id = int(request.GET.get('category_id'))
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+ERROR 2025-10-05 08:10:50,749 log 8836 6160314368 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 93, in get_wordbook_review_words
+    category_id = int(request.GET.get('category_id'))
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+ERROR 2025-10-05 08:10:54,485 log 8836 6159740928 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 93, in get_wordbook_review_words
+    category_id = int(request.GET.get('category_id'))
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+ERROR 2025-10-05 08:10:54,495 log 8836 6159740928 Internal Server Error: /api/v1/wordbooks/review/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/lingua_management/views/review_views.py", line 93, in get_wordbook_review_words
+    category_id = int(request.GET.get('category_id'))
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+ERROR 2025-10-26 05:26:54,655 log 3313 6325039104 Internal Server Error: /swagger/
+Traceback (most recent call last):
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/drf_yasg/views.py", line 112, in get
+    schema = generator.get_schema(request, self.public)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/drf_yasg/generators.py", line 276, in get_schema
+    paths, prefix = self.get_paths(endpoints, components, request, public)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/drf_yasg/generators.py", line 482, in get_paths
+    operation = self.get_operation(view, path, prefix, method, components, request)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/drf_yasg/generators.py", line 524, in get_operation
+    operation = view_inspector.get_operation(operation_keys)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/drf_yasg/inspectors/view.py", line 36, in get_operation
+    parameters = self.add_manual_parameters(parameters)
+  File "/Users/song-eeyoung/Project/django_practice/venv/lib/python3.10/site-packages/drf_yasg/inspectors/view.py", line 166, in add_manual_parameters
+    raise SwaggerGenerationError("cannot add form parameters when the request has a request body; "
+drf_yasg.errors.SwaggerGenerationError: cannot add form parameters when the request has a request body; did you forget to set an appropriate parser class on the view?
